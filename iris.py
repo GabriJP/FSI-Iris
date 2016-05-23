@@ -38,8 +38,8 @@ y1 = tf.sigmoid(tf.matmul(x, W1) + b1)
 y2 = tf.nn.softmax(tf.matmul(y1, W2) + b2)
 
 
-#cross_entropy = tf.reduce_sum(tf.square(y_ - y2))
-cross_entropy = -tf.reduce_sum(y_*tf.log(y2))
+cross_entropy = tf.reduce_sum(tf.square(y_ - y2))
+#cross_entropy = -tf.reduce_sum(y_*tf.log(y2))
 
 train = tf.train.GradientDescentOptimizer(0.01).minimize(cross_entropy)
 
